@@ -2,31 +2,584 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+body {
+  overflow-x: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.video-container {
+  position: relative;
+}
+
+.HPvideo {
+  left: 0;
+  right: 0;
+  top: 0; 
+  bottom: 0;
+  min-width: 100vw; 
   min-height: 100vh;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+.header-overlay {
+  background: white;
+  height: 50px;
+  z-index: 3;
+}
+
+.site-header {
+  position: absolute;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100vw;
+  margin-top: 10px;
+  background-color: transparent;
+  color: white;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.logo {
+  flex: 1;
+  /* float: left; */
+  color: white;
+  /* text-transform: uppercase; */
+  text-decoration: none;
+  font-family: 'Clicker Script', cursive;
+  letter-spacing: 2px;
+  /* padding: 10px 20px; */
+  font-size: 2em;
+  font-weight: bolder;
+
+}
+
+.site-nav {
+  text-align: center;
+  padding: 16px;
+  flex: 1;
+  font-family: 'Julius Sans One', sans-serif;
+  /* justify-content: center; */
+}
+
+.site-nav > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-flex;
+}
+
+.site-nav a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 20px;
+  /* display: inline-block; */
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.account-actions {
+  display: flex;
+  flex: 1;
+  justify-content: right;
+  /* text-align: right;
+  float: right; */
+  /* align-items: center; */
+  /* padding-right: 10px; */
+  /* float: right; */
+}
+
+.account-dropdown {
+  /* margin-right: 10px; */
+}
+.account-dropdown > ul {
+  display: none;
+}
+
+.sign-out-link {
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  /* margin-right: 200px; */
+  border: solid .1px white;
+  padding: 10px 20px;
+  margin-right: 140px;
+}
+
+.buttonNav button {
+  height: 40px;
+  background-color: transparent;
+  border: solid 2px black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.weather-bar {
+  position: absolute;
+  right: 0;
+  top: 25%;
+  transform: translate(0, -25%);
+  border-radius: 2%;
+  background: rgba(255, 255, 255, 0.3);
+  width: 5vw;
+  height: 30vh;
+  z-index: 1;
+  font-size: 1.5em;
+  padding: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.weather-bar img {
+  position: absolute;
+  right: -17px;
+}
+
+.text-copy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-size: 20px;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 20px;
+  /* white-space: nowrap; */
+  /* font-family: 'Julius Sans One', sans-serif; */
+  /* text-shadow: 1px 1px 1px #000; */
+}
+
+.palm-tree {
+  position: absolute;
+  bottom: 0;
+  left: 50;
+  transform: translate(-50%);
+  height: 250px;
+  opacity: .2;
+}
+
+/* 2nd Screen */
+.carousel-container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  padding-top: 40px;
+  /* display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr); */
+}
+
+.carousel {
+  width: 45vw; 
+  height: 60vh;
+  /* margin-left: 10px; */
+  grid-row: 3 / 9;
+  grid-column: 1;
+  margin-left: 20px;
+  margin-right: 10px;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+}
+
+.carousel-text {
+  width: 45vw; 
+  height: 60vh;
+  /* margin-right: 10px; */
+  grid-row: 3 / 9;
+  grid-column: 6;
+  margin-right: 10px;
+  margin-left: 60px;
+  font-family: 'Julius Sans One', sans-serif;
+  color: #474646;
+  text-align: left;
+}
+
+.carousel-text h1 {
+  margin-bottom: 20px;
+  margin-top: 60px;
+  font-size: 4vw;
+  font-family: 'Raleway', sans-serif;
+}
+
+.carousel-text h1:after {
+  content: ""; /* This is necessary for the pseudo element to work. */ 
+  display: block; /* This will put the pseudo element on its own line. */
+   /* This will center the border. */
+  width: 20%; /* Change this to whatever width you want. */
+  padding-top: 20px; /* This creates some space between the element and the border. */
+  border-bottom: 1px solid black;
+}
+
+.carousel-text p {
+  margin-bottom: 25px;
+  font-size: 1.3vw;
+  color: #474646;
+}
+
+.carousel-text a {
+  color: #474646;
+  font-weight: bold;
+  border-bottom: solid .1px black;
+}
+
+.carousel-item > img { 
+  height: 60vh;
+  width: 45vw;
+  /* background-attachment: fixed;
+  background-repeat: no-repeat; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+}
+
+.carousel-inner .item {
+  backface-visibility: visible;
+}
+
+.next-page-arrow {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+.next-page-arrow .icon {
+  position: absolute;
+  transform: translate(-50%);
+  /* width: 100vw;
+  height: 100vh; */
+  bottom: 0;
+  left: 50;
+}
+
+.about-container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  /* border: solid yellow; */
+  /* padding-top: 40px; */
+}
+
+.carousel-tree-img {
+  position: absolute;
+  /* width: 100vw; */
+  min-height: 100vh;
+  opacity: 0.1;
+  /* border: solid red; */
+}
+
+.carousel-tree-img img {
+  position: absolute;
+  width: 100vw;
+  min-height: 100vh;
+  bottom: 0;
+  left: 0;
+}
+
+.about-header {
+  width: 100vw;
+  grid-row: 2;
+  margin-top: 90px;
+}
+
+.about-header h1 {
+  font-family: 'Raleway', sans-serif;
+}
+
+.about-header h2{
+  font-size: 1.3vw;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.about-images {
+  grid-row: 6;
+  display: grid;
+  width: 85vw;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 25px;
+  align-items: stretch;
+  margin: 0 auto;
+}
+
+.about-image:hover {
+  border-bottom: solid 0.1px black;
+}
+
+.about-image img:hover {
+  opacity: 1;
+	-webkit-animation: flash 1.5s;
+	animation: flash 1.5s;
+}
+
+.footer-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #f5f5f5;
+  color: #474646;
+}
+
+@-webkit-keyframes flash {
+	0% {
+		opacity: .7;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .7;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.about-images p {
+  font-family: 'Julius Sans One', sans-serif;
+  font-weight: bolder;
+  margin-top: 10px;
+  font-size: 1.3em;
+}
+
+.about-images img {
+  /* height: 50vh;
+  width: 30vw;
+  margin: 10px; */
+  max-width: 100%;
+  height: 45vh;
+}
+
+.footer-container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+}
+
+.beach-house-img {
+  height: 50vh;
+  width: 50vw;
+  grid-row: 4 / 9;
+  grid-column: 1;
+  border: solid red;
+  text-align: right;
+}
+
+.beach-house-img img {
+  height: 40vh;
+  width: 30vw;
+  margin-right: 40px;
+}
+
+.contact-info {
+  height: 50vh;
+  width: 50vw;
+  grid-row: 4 / 9;
+  grid-column: 6;
+  text-align: left;
+  border: solid yellow; 
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    flex-wrap: wrap;
   }
-  to {
-    transform: rotate(360deg);
+
+  .site-header .logo {
+    /* margin-left: 15px; */
+    font-size: 1.5em;
+  }
+
+  .site-header .site-nav {
+    background-color: transparent;
+    order: 2;
+    flex-basis: 100%;
+    /* margin-left: 10px; */
+  }
+  .site-header .site-nav a {
+    font-size: .8rem;
+  }
+  .site-header .account-actions {
+    /* margin-left: auto; */
+    display: none;
+  }
+
+  .text-copy {
+    font-size: .4em;;
+  }
+
+  .about-header {
+    margin-top: 45px;
+  }
+
+  .carousel {
+    height: 30vh;
+    width: 100vw;
+    margin-top: 4px;
+    margin-left: 0;
+    grid-row: 6 / 12;
+    grid-column: 1 / 12;
+  }
+
+  .carousel-text {
+    width: 92vw;
+    margin-top: 20px;
+    margin-right: 0;
+    margin-left: 8px;
+    grid-row: 1 / 6;
+    grid-column: 1 / 12;
+    font-size: 3.2vw;
+  }
+
+  .carousel-text p {
+    font-size: 2vw;
+  }
+
+  .carousel-text h1 {
+    margin-top: 0;
+    font-size: 7vw;
+  }
+
+  .carousel-item > img { 
+    height: 30vh;
+    width: 100vw;
+
   }
 }
+
+
+@media (max-width: 500px) {
+  .carousel-text p {
+    font-size: 3.5vw;
+  }
+
+  .carousel-text h1 {
+    font-size: 8vw;
+  }
+
+  .site-header .logo {
+    /* margin-left: 15px; */
+    font-size: 2em;
+  }
+
+  .about-container {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .about-images img {
+    height: 22vh;
+    width: 70vw;
+    margin-top: 10px;
+  }
+
+  .about-header {
+    margin-top: -120px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* parallx style
+/* section {
+  box-sizing: border-box;
+  height: 100vh;
+  text-align: center;
+  padding: 2vw;
+  font-size: 6vw;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+section:first-of-type {
+  text-transform: uppercase;
+  color: #fff;
+	font-size: 8vw;
+	text-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+
+section:nth-of-type(even) {
+	background: #fff;
+}
+
+section:nth-of-type(1) {
+	background-image: url(beachwave.jpg);
+}
+
+section:nth-of-type(3) {
+	background-image: url(beachtree.jpg);
+}
+
+section:nth-of-type(5) {
+	background-image: url(boats.jpg);
+} */
+
