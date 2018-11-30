@@ -52,3 +52,5 @@ class HomeScreen extends Component {
 }
 
 export default HomeScreen;
+
+const test = 1;
