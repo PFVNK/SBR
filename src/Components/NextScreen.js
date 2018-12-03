@@ -26,8 +26,8 @@ class NextScreen extends Component {
                     </div>
 
                     <div className='carousel-text'>
-                        <Zoom>
-                            <h1>Find the Secret Island... find fun</h1>
+                        <Zoom cascade>
+                            <h1>Find the Secret Island.... find fun</h1>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic perspiciatis eius quisquam ab dignissimos adipisci iusto, nemo debitis reiciendis! Architecto eaque placeat dolore harum doloremque. Illo at quo officia quas.</p>
                             <a href="#">Learn About Our Services</a>
                         </Zoom>
