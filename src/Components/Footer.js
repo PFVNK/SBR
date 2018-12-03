@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import beachhouse from '../beachhouseBW.png'
+import beachhouse from '../beachhousepalm.png'
 
 
 class Footer extends Component {
@@ -13,15 +13,13 @@ class Footer extends Component {
                     </div>
 
                     <div className='contact-info'>
-                        <h2>Let's Connect</h2>
-                        <p>602 Rutledge Avenue</p>
-                        <p>Charleston, South Carolina 29403</p>
-                        <a href="mailto:hello@cobblehilldigital.com">
+                        <div className='contact-info-content'>
+                            <h2>Let's Connect</h2>
+                            <p>602 Rutledge Avenue</p>
+                            <p>Charleston, South Carolina 29403</p>
                             <p>hello@cobblehilldigital.com</p>
-                        </a>
-                        <a href="tel:843-718-3337">
                             <p>843-718-3337</p>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
