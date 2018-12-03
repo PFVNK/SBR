@@ -15,9 +15,10 @@ class Footer extends Component {
                     <div className='contact-info'>
                         <div className='contact-info-content'>
                             <h2>Let's Connect</h2>
-                            <p>602 Rutledge Avenue</p>
-                            <p>Charleston, South Carolina 29403</p>
-                            <p>hello@cobblehilldigital.com</p>
+                            <div className='contact-bottom-content'></div>
+                            <p>4mi North of bridge</p>
+                            <p>Ambergris, Caye, Belize</p>
+                            <p>hello@secretbeachrentals.com</p>
                             <p>843-718-3337</p>
                         </div>
                     </div>
