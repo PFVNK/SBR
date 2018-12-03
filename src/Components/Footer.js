@@ -17,7 +17,7 @@ class Footer extends Component {
                             <h2>Let's Connect</h2>
                             <div className='contact-bottom-content'></div>
                             <p>4mi North of bridge</p>
-                            <p>Ambergris, Caye, Belize</p>
+                            <p>Ambergris Caye, Belize</p>
                             <p>hello@secretbeachrentals.com</p>
                             <p>843-718-3337</p>
                         </div>
