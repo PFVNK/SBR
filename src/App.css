@@ -16,6 +16,10 @@ body {
   background: transparent;
 }
 
+a {
+  color: inherit;
+}
+
 .video-container {
   position: relative;
 }
@@ -108,10 +112,6 @@ body {
   /* align-items: center; */
   /* padding-right: 10px; */
   /* float: right; */
-}
-
-.account-dropdown {
-  /* margin-right: 10px; */
 }
 
 .account-dropdown > ul {
@@ -406,16 +406,15 @@ body {
 .beach-house-img {
   height: 50vh;
   width: 50vw;
-  grid-row: 4 / 9;
+  grid-row: 3 / 10;
   grid-column: 1;
-  border: solid red;
-  text-align: right;
+  /* border: solid red; */
 }
 
 .beach-house-img img {
-  height: 40vh;
-  width: 30vw;
-  margin-right: 40px;
+  height: 50vh;
+  width: 40vw;
+  float: right;
 }
 
 .contact-info {
@@ -423,8 +422,33 @@ body {
   width: 50vw;
   grid-row: 4 / 9;
   grid-column: 6;
+  /* border: solid yellow;  */
+}
+
+.contact-info-content {
+  float: left;
+  height: 50vh;
+  margin-left: 40px;
+  font-size: 1.3em;
+  font-family: 'Raleway', sans-serif;
   text-align: left;
-  border: solid yellow; 
+  justify-self: center;
+}
+
+.contact-info-content h2 {
+  font-size: 1.8em;
+}
+
+.contact-info-content p:first-child {
+  margin-top: 50px;
+}
+
+.contact-info h2:after {
+  content: "";
+  display: block;
+  width: 40%;
+  padding-top: 20px;
+  border-bottom: 1px solid black;
 }
 
 @media (max-width: 1280px) {
@@ -521,6 +545,21 @@ body {
     width: 50vw;
     margin-top: 10px;
   }
+
+  .beach-house-img {
+    grid-row: 1 / 5;
+    grid-column: 4 / 9;
+  }
+
+  .contact-info {
+    grid-row: 6 / 12;
+    grid-column: 4 / 9;
+    margin-top: 50px;
+  }
+
+  .contact-info-content {
+    font-size: 1.1em;
+  }
 }
 
 
@@ -555,6 +594,20 @@ body {
 
   .about-header h2 {
     font-size: 1em;
+  }
+
+  .beach-house-img img {
+    float: none;
+    width: 65vw;
+  }
+
+  .contact-info-content {
+    font-size: .9em;
+    margin-left: 0px;
+  }
+
+  .about-images {
+    margin-left: 17px;
   }
 }
 
