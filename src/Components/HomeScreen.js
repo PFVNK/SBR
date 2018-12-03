@@ -29,7 +29,7 @@ class HomeScreen extends Component {
                     </Zoom>
                 </header>
 
-                <aside className='weather-bar'>95f sunny<img src={sun} alt="sun svg" /></aside>
+                <aside className='weather-bar'>95<span>&#176;</span> sunny<img src={sun} alt="sun svg" /></aside>
 
                 <div className='video-container'>
                     <video className='HPvideo' autoPlay loop>
